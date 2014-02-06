@@ -3,6 +3,16 @@ var http = http = require('http')
 var bunyan = require('bunyan')
 var Router = require('node-simple-router') //https://github.com/sandy98/node-simple-router
 var router = Router({'logging': false});
+var mkdirp = require('mkdirp');
+
+var makeDirs = function (dirs){
+  dirs.map(function(d){
+      mkdirp(d, function(err){});
+  })
+}
+var dirs = ['log','tmp']
+makeDirs(dirs)
+
 // Write out the banner to the console
 var banner = function () {
   fs.readFile('banner.txt', function (err, data) {  
