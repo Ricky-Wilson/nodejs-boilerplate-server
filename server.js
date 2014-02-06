@@ -10,7 +10,7 @@ var makeDirs = function (dirs){
       mkdirp(d, function(err){});
   })
 }
-var dirs = ['log','tmp']
+var dirs = ['log','tmp','public']
 makeDirs(dirs)
 
 // Write out the banner to the console
