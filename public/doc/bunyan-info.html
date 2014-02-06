@@ -1,0 +1,2096 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>node-bunyan/README.md at master · trentm/node-bunyan · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    <meta property="fb:app_id" content="1401488693436528"/>
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="trentm/node-bunyan" name="twitter:title" /><meta content="node-bunyan - a simple and fast JSON logging module for node.js services" name="twitter:description" /><meta content="https://1.gravatar.com/avatar/26156e2b45d0a7aa9b98b78019997f5b?d=https%3A%2F%2Fidenticons.github.com%2F933b9909d5c4fcc2eb0ef8b2d9d7c02d.png&amp;r=x&amp;s=400" name="twitter:image:src" />
+<meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://1.gravatar.com/avatar/26156e2b45d0a7aa9b98b78019997f5b?d=https%3A%2F%2Fidenticons.github.com%2F933b9909d5c4fcc2eb0ef8b2d9d7c02d.png&amp;r=x&amp;s=400" property="og:image" /><meta content="trentm/node-bunyan" property="og:title" /><meta content="https://github.com/trentm/node-bunyan" property="og:url" /><meta content="node-bunyan - a simple and fast JSON logging module for node.js services" property="og:description" />
+
+    <meta name="hostname" content="github-fe121-cp1-prd.iad.github.net">
+    <meta name="ruby" content="ruby 2.1.0p0-github-tcmalloc (87d8860372) [x86_64-linux]">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    <link rel="xhr-socket" href="/_sockets" />
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="selected-link" value="repo_source" data-pjax-transient />
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="4AB915AF:3F35:1C6D168:52F1327A" name="octolytics-dimension-request_id" />
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="bZAVmHcG0mubqZDBzqghp0TOQMEcxbfeJgIuF+nMXks=" name="csrf-token" />
+
+    <link href="https://github.global.ssl.fastly.net/assets/github-f13ccf5b95c8e7e9250a34ba89256eaf0061fbcb.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://github.global.ssl.fastly.net/assets/github2-64208a7a24febf554b38d0b3cbac40b69c1f6a7b.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+      <script src="https://github.global.ssl.fastly.net/assets/frameworks-6629588efc908265e5f194016e81140bfa95e9ee.js" type="text/javascript"></script>
+      <script async="async" defer="defer" src="https://github.global.ssl.fastly.net/assets/github-82f1af865225f5991e44c8685e542d9c026cf2f0.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="3cf1adbe769f3c109dd3c8a7e4bdba03">
+
+        <link data-pjax-transient rel='permalink' href='/trentm/node-bunyan/blob/64a0196ddfab815bdfc8676098b34f264a2b5fd0/README.md'>
+
+  <meta name="description" content="node-bunyan - a simple and fast JSON logging module for node.js services" />
+
+  <meta content="46866" name="octolytics-dimension-user_id" /><meta content="trentm" name="octolytics-dimension-user_login" /><meta content="3302795" name="octolytics-dimension-repository_id" /><meta content="trentm/node-bunyan" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="3302795" name="octolytics-dimension-repository_network_root_id" /><meta content="trentm/node-bunyan" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/trentm/node-bunyan/commits/master.atom" rel="alternate" title="Recent Commits to node-bunyan:master" type="application/atom+xml" />
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public page-blob">
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+        <a class="button primary" href="/join">Sign up</a>
+      <a class="button signin" href="/login?return_to=%2Ftrentm%2Fnode-bunyan%2Fblob%2Fmaster%2FREADME.md">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+      <ul class="top-nav">
+          <li class="explore"><a href="/explore">Explore</a></li>
+        <li class="features"><a href="/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    
+    
+      data-repo="trentm/node-bunyan"
+      data-branch="master"
+      data-sha="5a0958750f3df1bf7513d8f3fc0a527a8ed2ca98"
+  >
+
+    <input type="hidden" name="nwo" value="trentm/node-bunyan" />
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked" />
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global" />
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="octicon help tooltipped downwards" title="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+      
+
+
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+  <li>
+    <a href="/login?return_to=%2Ftrentm%2Fnode-bunyan"
+    class="minibutton with-count js-toggler-target star-button tooltipped upwards"
+    title="You must be signed in to use this feature" rel="nofollow">
+    <span class="octicon octicon-star"></span>Star
+  </a>
+
+    <a class="social-count js-social-count" href="/trentm/node-bunyan/stargazers">
+      593
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Ftrentm%2Fnode-bunyan"
+        class="minibutton with-count js-toggler-target fork-button tooltipped upwards"
+        title="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-git-branch"></span>Fork
+      </a>
+      <a href="/trentm/node-bunyan/network" class="social-count">
+        49
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="/trentm" class="url fn" itemprop="url" rel="author"><span itemprop="title">trentm</span></a>
+          </span>
+          <span class="repohead-name-divider">/</span>
+          <strong><a href="/trentm/node-bunyan" class="js-current-repository js-repo-home-link">node-bunyan</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      
+
+      <div class="repository-with-sidebar repo-container new-discussion-timeline js-new-discussion-timeline  ">
+        <div class="repository-sidebar">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped leftwards" title="Code">
+        <a href="/trentm/node-bunyan" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /trentm/node-bunyan">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+        <li class="tooltipped leftwards" title="Issues">
+          <a href="/trentm/node-bunyan/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /trentm/node-bunyan/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class='counter'>49</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>        </li>
+
+      <li class="tooltipped leftwards" title="Pull Requests">
+        <a href="/trentm/node-bunyan/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /trentm/node-bunyan/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class='counter'>6</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped leftwards" title="Pulse">
+        <a href="/trentm/node-bunyan/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /trentm/node-bunyan/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped leftwards" title="Graphs">
+        <a href="/trentm/node-bunyan/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /trentm/node-bunyan/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped leftwards" title="Network">
+        <a href="/trentm/node-bunyan/network" aria-label="Network" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-selected-links="repo_network /trentm/node-bunyan/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+    </ul>
+
+
+  </div>
+</div>
+
+              <div class="only-with-full-nav">
+                
+
+  
+
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/trentm/node-bunyan.git" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/trentm/node-bunyan.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/trentm/node-bunyan" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/trentm/node-bunyan" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+      or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <span class="octicon help tooltipped upwards" title="Get help on which URL is right for you.">
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use">
+    <span class="octicon octicon-question"></span>
+    </a>
+  </span>
+</p>
+
+
+
+                <a href="/trentm/node-bunyan/archive/master.zip"
+                   class="minibutton sidebar-button"
+                   title="Download this repository as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+
+
+<!-- blob contrib key: blob_contributors:v21:f72b5bfab17ae5b7bb25381d83d12b0a -->
+
+<p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+<a href="/trentm/node-bunyan/find/master" data-pjax data-hotkey="t" class="js-show-file-finder" style="display:none">Show File Finder</a>
+
+<div class="file-navigation">
+  
+
+<div class="select-menu js-menu-container js-select-menu" >
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/blob/1.x/README.md"
+                 data-name="1.x"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="1.x">1.x</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/blob/dtrace/README.md"
+                 data-name="dtrace"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="dtrace">dtrace</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/blob/gh-pages/README.md"
+                 data-name="gh-pages"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="gh-pages">gh-pages</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/blob/master/README.md"
+                 data-name="master"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.22.1/README.md"
+                 data-name="0.22.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.22.1">0.22.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.22.0/README.md"
+                 data-name="0.22.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.22.0">0.22.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.21.4/README.md"
+                 data-name="0.21.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.21.4">0.21.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.21.3/README.md"
+                 data-name="0.21.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.21.3">0.21.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.21.2/README.md"
+                 data-name="0.21.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.21.2">0.21.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.21.1/README.md"
+                 data-name="0.21.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.21.1">0.21.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.21.0/README.md"
+                 data-name="0.21.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.21.0">0.21.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.20.0/README.md"
+                 data-name="0.20.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.20.0">0.20.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.19.0/README.md"
+                 data-name="0.19.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.19.0">0.19.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.18.3/README.md"
+                 data-name="0.18.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.18.3">0.18.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.18.2/README.md"
+                 data-name="0.18.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.18.2">0.18.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.18.1/README.md"
+                 data-name="0.18.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.18.1">0.18.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.18.0/README.md"
+                 data-name="0.18.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.18.0">0.18.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.17.0/README.md"
+                 data-name="0.17.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.17.0">0.17.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.8/README.md"
+                 data-name="0.16.8"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.8">0.16.8</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.7/README.md"
+                 data-name="0.16.7"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.7">0.16.7</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.6/README.md"
+                 data-name="0.16.6"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.6">0.16.6</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.5/README.md"
+                 data-name="0.16.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.5">0.16.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.4/README.md"
+                 data-name="0.16.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.4">0.16.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.3/README.md"
+                 data-name="0.16.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.3">0.16.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.2/README.md"
+                 data-name="0.16.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.2">0.16.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.1/README.md"
+                 data-name="0.16.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.1">0.16.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.16.0/README.md"
+                 data-name="0.16.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.16.0">0.16.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.15.0/README.md"
+                 data-name="0.15.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.15.0">0.15.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.6/README.md"
+                 data-name="0.14.6"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.6">0.14.6</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.5/README.md"
+                 data-name="0.14.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.5">0.14.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.4/README.md"
+                 data-name="0.14.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.4">0.14.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.3/README.md"
+                 data-name="0.14.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.3">0.14.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.2/README.md"
+                 data-name="0.14.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.2">0.14.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.1/README.md"
+                 data-name="0.14.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.1">0.14.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.14.0/README.md"
+                 data-name="0.14.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.14.0">0.14.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.5/README.md"
+                 data-name="0.13.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.5">0.13.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.4/README.md"
+                 data-name="0.13.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.4">0.13.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.3/README.md"
+                 data-name="0.13.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.3">0.13.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.2/README.md"
+                 data-name="0.13.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.2">0.13.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.1/README.md"
+                 data-name="0.13.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.1">0.13.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.13.0/README.md"
+                 data-name="0.13.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.13.0">0.13.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.12.0/README.md"
+                 data-name="0.12.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.12.0">0.12.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.11.3/README.md"
+                 data-name="0.11.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.11.3">0.11.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.11.2/README.md"
+                 data-name="0.11.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.11.2">0.11.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.11.1/README.md"
+                 data-name="0.11.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.11.1">0.11.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.11.0/README.md"
+                 data-name="0.11.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.11.0">0.11.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.10.0/README.md"
+                 data-name="0.10.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.10.0">0.10.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.9.0/README.md"
+                 data-name="0.9.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.9.0">0.9.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.8.0/README.md"
+                 data-name="0.8.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.8.0">0.8.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.7.0/README.md"
+                 data-name="0.7.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.7.0">0.7.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.9/README.md"
+                 data-name="0.6.9"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.9">0.6.9</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.8/README.md"
+                 data-name="0.6.8"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.8">0.6.8</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.7/README.md"
+                 data-name="0.6.7"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.7">0.6.7</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.6/README.md"
+                 data-name="0.6.6"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.6">0.6.6</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.5/README.md"
+                 data-name="0.6.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.5">0.6.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.4/README.md"
+                 data-name="0.6.4"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.4">0.6.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.3/README.md"
+                 data-name="0.6.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.3">0.6.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.2/README.md"
+                 data-name="0.6.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.2">0.6.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.1/README.md"
+                 data-name="0.6.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.1">0.6.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.6.0/README.md"
+                 data-name="0.6.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.6.0">0.6.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.5.3/README.md"
+                 data-name="0.5.3"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.5.3">0.5.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.5.2/README.md"
+                 data-name="0.5.2"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.5.2">0.5.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.5.1/README.md"
+                 data-name="0.5.1"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.5.1">0.5.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.5.0/README.md"
+                 data-name="0.5.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.5.0">0.5.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.4.0/README.md"
+                 data-name="0.4.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.4.0">0.4.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.3.0/README.md"
+                 data-name="0.3.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.3.0">0.3.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.2.0/README.md"
+                 data-name="0.2.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.2.0">0.2.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/trentm/node-bunyan/tree/0.1.0/README.md"
+                 data-name="0.1.0"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="0.1.0">0.1.0</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="breadcrumb">
+    <span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/trentm/node-bunyan" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">node-bunyan</span></a></span></span><span class="separator"> / </span><strong class="final-path">README.md</strong> <span class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="README.md" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+  <div class="commit commit-loader file-history-tease js-deferred-content" data-url="/trentm/node-bunyan/contributors/master/README.md">
+    Fetching contributors…
+
+    <div class="participation">
+      <p class="loader-loading"><img alt="Octocat-spinner-32-eaf2f5" height="16" src="https://github.global.ssl.fastly.net/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /></p>
+      <p class="loader-error">Cannot retrieve contributors at this time</p>
+    </div>
+  </div>
+
+<div id="files" class="bubble">
+  <div class="file">
+    <div class="meta">
+      <div class="info">
+        <span class="icon"><b class="octicon octicon-file-text"></b></span>
+        <span class="mode" title="File Mode">file</span>
+          <span>931 lines (722 sloc)</span>
+        <span>32.136 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+              <a class="minibutton disabled tooltipped leftwards" href="#"
+                 title="You must be signed in to make or propose changes">Edit</a>
+          <a href="/trentm/node-bunyan/raw/master/README.md" class="button minibutton " id="raw-url">Raw</a>
+            <a href="/trentm/node-bunyan/blame/master/README.md" class="button minibutton js-update-url-with-hash">Blame</a>
+          <a href="/trentm/node-bunyan/commits/master/README.md" class="button minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+          <a class="minibutton danger disabled empty-icon tooltipped leftwards" href="#"
+             title="You must be signed in to make or propose changes">
+          Delete
+        </a>
+      </div><!-- /.actions -->
+    </div>
+      
+  <div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><p>Bunyan is <strong>a simple and fast JSON logging library</strong> for node.js services:</p>
+
+<pre><code>var bunyan = require('bunyan');
+var log = bunyan.createLogger({name: "myapp"});
+log.info("hi");
+</code></pre>
+
+<p>and <strong>a <code>bunyan</code> CLI tool</strong> for nicely viewing those logs:</p>
+
+<p><a href="https://raw.github.com/trentm/node-bunyan/master/tools/screenshot1.png" target="_blank"><img src="https://raw.github.com/trentm/node-bunyan/master/tools/screenshot1.png" alt="bunyan CLI screenshot" style="max-width:100%;"></a></p>
+
+<p>Manifesto: Server logs should be structured. JSON's a good format. Let's do
+that. A log record is one line of <code>JSON.stringify</code>'d output. Let's also
+specify some common names for the requisite and common fields for a log
+record (see below).</p>
+
+<p>Also: log4j is way more than you need.</p>
+
+<h1>
+<a name="current-status" class="anchor" href="#current-status"><span class="octicon octicon-link"></span></a>Current Status</h1>
+
+<p>Solid core functionality is there. Joyent is using this for a number of
+production services. Bunyan supports node 0.6 and greater. Follow
+<a href="https://twitter.com/intent/user?screen_name=trentmick" target="_blank">@trentmick</a>
+for updates to Bunyan.</p>
+
+<p>There is an email discussion list
+<a href="mailto:bunyan-logging@googlegroups.com">bunyan-logging@googlegroups.com</a>,
+also <a href="https://groups.google.com/forum/?fromgroups#!forum/bunyan-logging">as a forum in the
+browser</a>.</p>
+
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<pre><code>npm install bunyan
+</code></pre>
+
+<p><strong>Tip</strong>: The <code>bunyan</code> CLI tool is written to be compatible (within reason) with
+all versions of Bunyan logs. Therefore you might want to <code>npm install -g bunyan</code>
+to get the bunyan CLI on your PATH, then use local bunyan installs for
+node.js library usage of bunyan in your apps.</p>
+
+<h1>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
+
+<ul>
+<li>elegant <a href="#log-method-api">log method API</a>
+</li>
+<li>extensible <a href="#streams">streams</a> system for controlling where log records
+go (to a stream, to a file, <a href="#stream-type-rotating-file">log file rotation</a>,
+etc.)</li>
+<li>
+<a href="#cli-usage"><code>bunyan</code> CLI</a> for pretty-printing and filtering of Bunyan logs</li>
+<li>simple include of log call source location (file, line, function) with
+<a href="#src"><code>src: true</code></a>
+</li>
+<li>light-weight specialization of Logger instances with <a href="#logchild"><code>log.child</code></a>
+</li>
+<li>custom rendering of logged objects with <a href="#serializers">"serializers"</a>
+</li>
+<li><a href="#dtrace-support">Runtime log snooping via Dtrace support</a></li>
+</ul><h1>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>Like most logging libraries you create a Logger instance and call methods
+named after the logging levels:</p>
+
+<pre><code>$ cat hi.js
+var bunyan = require('bunyan');
+var log = bunyan.createLogger({name: 'myapp'});
+log.info('hi');
+log.warn({lang: 'fr'}, 'au revoir');
+</code></pre>
+
+<p>All loggers must provide a "name". This is somewhat akin to the log4j logger
+"name", but Bunyan doesn't do hierarchical logger names.</p>
+
+<p><strong>Bunyan log records are JSON.</strong> A few fields are added automatically:
+"pid", "hostname", "time" and "v".</p>
+
+<pre><code>$ node hi.js
+{"name":"myapp","hostname":"banana.local","pid":40161,"level":30,"msg":"hi","time":"2013-01-04T18:46:23.851Z","v":0}
+{"name":"myapp","hostname":"banana.local","pid":40161,"level":40,"lang":"fr","msg":"au revoir","time":"2013-01-04T18:46:23.853Z","v":0}
+</code></pre>
+
+<h2>
+<a name="log-method-api" class="anchor" href="#log-method-api"><span class="octicon octicon-link"></span></a>Log Method API</h2>
+
+<p>The example above shows two different ways to call <code>log.info(...)</code>. The
+full API is:</p>
+
+<pre><code>log.info();     // Returns a boolean: is the "info" level enabled?
+                // This is equivalent to `log.isInfoEnabled()` or
+                // `log.isEnabledFor(INFO)` in log4j.
+
+log.info('hi');                     // Log a simple string message.
+log.info('hi %s', bob, anotherVar); // Uses `util.format` for msg formatting.
+
+log.info({foo: 'bar'}, 'hi');
+                // Adds "foo" field to log record. You can add any number
+                // of additional fields here.
+
+log.info(err);  // Special case to log an `Error` instance to the record.
+                // This adds an "err" field with exception details
+                // (including the stack) and sets "msg" to the exception
+                // message.
+log.info(err, 'more on this: %s', more);
+                // ... or you can specify the "msg".
+</code></pre>
+
+<p>Note that this implies <strong>you cannot pass any object as the first argument
+to log it</strong>. IOW, <code>log.info(mywidget)</code> may not be what you expect. Instead
+of a string representation of <code>mywidget</code> that other logging libraries may
+give you, Bunyan will try to JSON-ify your object. It is a Bunyan best
+practice to always give a field name to included objects, e.g.:</p>
+
+<pre><code>log.info({widget: mywidget}, ...)
+</code></pre>
+
+<p>This will dove-tail with <a href="#serializers">Bunyan serializer support</a>, discussed
+later.</p>
+
+<p>The same goes for all of Bunyan's log levels: <code>log.trace</code>, <code>log.debug</code>,
+<code>log.info</code>, <code>log.warn</code>, and <code>log.fatal</code>. See the <a href="#levels">levels section</a>
+below for details and suggestions.</p>
+
+<h2>
+<a name="cli-usage" class="anchor" href="#cli-usage"><span class="octicon octicon-link"></span></a>CLI Usage</h2>
+
+<p>Bunyan log output is a stream of JSON objects. This is great for processing,
+but not for reading directly. A <strong><code>bunyan</code> tool</strong> is provided <strong>for
+pretty-printing bunyan logs</strong> and for <strong>filtering</strong> (e.g.
+<code>| bunyan -c 'this.foo == "bar"'</code>). Using our example above:</p>
+
+<pre><code>$ node hi.js | ./bin/bunyan
+[2013-01-04T19:01:18.241Z]  INFO: myapp/40208 on banana.local: hi
+[2013-01-04T19:01:18.242Z]  WARN: myapp/40208 on banana.local: au revoir (lang=fr)
+</code></pre>
+
+<p>See the screenshot above for an example of the default coloring of rendered
+log output. That example also shows the nice formatting automatically done for
+some well-known log record fields (e.g. <code>req</code> is formatted like an HTTP request,
+<code>res</code> like an HTTP response, <code>err</code> like an error stack trace).</p>
+
+<p>One interesting feature is <strong>filtering</strong> of log content, which can be useful
+for digging through large log files or for analysis. We can filter only
+records above a certain level:</p>
+
+<pre><code>$ node hi.js | bunyan -l warn
+[2013-01-04T19:08:37.182Z]  WARN: myapp/40353 on banana.local: au revoir (lang=fr)
+</code></pre>
+
+<p>Or filter on the JSON fields in the records (e.g. only showing the French
+records in our contrived example):</p>
+
+<pre><code>$ node hi.js | bunyan -c 'this.lang == "fr"'
+[2013-01-04T19:08:26.411Z]  WARN: myapp/40342 on banana.local: au revoir (lang=fr)
+</code></pre>
+
+<p>See <code>bunyan --help</code> for other facilities.</p>
+
+<h2>
+<a name="streams-introduction" class="anchor" href="#streams-introduction"><span class="octicon octicon-link"></span></a>Streams Introduction</h2>
+
+<p>By default, log output is to stdout and at the "info" level. Explicitly that
+looks like:</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: 'myapp',
+    stream: process.stdout,
+    level: 'info'
+});
+</code></pre>
+
+<p>That is an abbreviated form for a single stream. <strong>You can define multiple
+streams at different levels</strong>.</p>
+
+<pre><code>var log = bunyan.createLogger({
+  name: 'myapp',
+  streams: [
+    {
+      level: 'info',
+      stream: process.stdout,           // log INFO and above to stdout
+    },
+    {
+      level: 'error',
+      path: '/var/log/myapp-error.log'  // log ERROR and above to a file
+    }
+  ]
+});
+</code></pre>
+
+<p>More on streams in the <a href="#streams">Streams section</a> below.</p>
+
+<h2>
+<a name="logchild" class="anchor" href="#logchild"><span class="octicon octicon-link"></span></a>log.child</h2>
+
+<p>Bunyan has a concept of a child logger to <strong>specialize a logger for a
+sub-component of your application</strong>, i.e. to create a new logger with
+additional bound fields that will be included in its log records. A child
+logger is created with <code>log.child(...)</code>.</p>
+
+<p>In the following example, logging on a "Wuzzle" instance's <code>this.log</code> will
+be exactly as on the parent logger with the addition of the <code>widget_type</code>
+field:</p>
+
+<pre><code>var bunyan = require('bunyan');
+var log = bunyan.createLogger({name: 'myapp'});
+
+function Wuzzle(options) {
+    this.log = options.log.child({widget_type: 'wuzzle'});
+    this.log.info('creating a wuzzle')
+}
+Wuzzle.prototype.woos = function () {
+    this.log.warn('This wuzzle is woosey.')
+}
+
+log.info('start');
+var wuzzle = new Wuzzle({log: log});
+wuzzle.woos();
+log.info('done');
+</code></pre>
+
+<p>Running that looks like (raw):</p>
+
+<pre><code>$ node myapp.js
+{"name":"myapp","hostname":"myhost","pid":34572,"level":30,"msg":"start","time":"2013-01-04T07:47:25.814Z","v":0}
+{"name":"myapp","hostname":"myhost","pid":34572,"widget_type":"wuzzle","level":30,"msg":"creating a wuzzle","time":"2013-01-04T07:47:25.815Z","v":0}
+{"name":"myapp","hostname":"myhost","pid":34572,"widget_type":"wuzzle","level":40,"msg":"This wuzzle is woosey.","time":"2013-01-04T07:47:25.815Z","v":0}
+{"name":"myapp","hostname":"myhost","pid":34572,"level":30,"msg":"done","time":"2013-01-04T07:47:25.816Z","v":0}
+</code></pre>
+
+<p>And with the <code>bunyan</code> CLI (using the "short" output mode):</p>
+
+<pre><code>$ node myapp.js  | bunyan -o short
+07:46:42.707Z  INFO myapp: start
+07:46:42.709Z  INFO myapp: creating a wuzzle (widget_type=wuzzle)
+07:46:42.709Z  WARN myapp: This wuzzle is woosey. (widget_type=wuzzle)
+07:46:42.709Z  INFO myapp: done
+</code></pre>
+
+<p>A more practical example is in the
+<a href="https://github.com/mcavage/node-restify">node-restify</a> web framework.
+Restify uses Bunyan for its logging. One feature of its integration, is that
+if <code>server.use(restify.requestLogger())</code> is used, each restify request handler
+includes a <code>req.log</code> logger that is:</p>
+
+<pre><code>log.child({req_id: &lt;unique request id&gt;}, true)
+</code></pre>
+
+<p>Apps using restify can then use <code>req.log</code> and have all such log records
+include the unique request id (as "req_id"). Handy.</p>
+
+<h2>
+<a name="serializers" class="anchor" href="#serializers"><span class="octicon octicon-link"></span></a>Serializers</h2>
+
+<p>Bunyan has a concept of <strong>"serializers" to produce a JSON-able object from a
+JavaScript object</strong>, so you can easily do the following:</p>
+
+<pre><code>log.info({req: &lt;request object&gt;}, 'something about handling this request');
+</code></pre>
+
+<p>Serializers is a mapping of log record field name, "req" in this example, to
+a serializer function. That looks like this:</p>
+
+<pre><code>function reqSerializer(req) {
+    return {
+        method: req.method,
+        url: req.url,
+        headers: req.headers
+    }
+}
+var log = bunyan.createLogger({
+    name: 'myapp',
+    serializers: {
+        req: reqSerializer
+    }
+});
+</code></pre>
+
+<p>Or this:</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: 'myapp',
+    serializers: {req: bunyan.stdSerializers.req}
+});
+</code></pre>
+
+<p>because Buyan includes a small set of standard serializers. To use all the
+standard serializers you can use:</p>
+
+<pre><code>var log = bunyan.createLogger({
+  ...
+  serializers: bunyan.stdSerializers
+});
+</code></pre>
+
+<p><strong>Note</strong>: Your own serializers should never throw, otherwise you'll get an
+ugly message on stderr from Bunyan (along with the traceback) and the field
+in your log record will be replaced with a short error message.</p>
+
+<h2>
+<a name="src" class="anchor" href="#src"><span class="octicon octicon-link"></span></a>src</h2>
+
+<p>The <strong>source file, line and function of the log call site</strong> can be added to
+log records by using the <code>src: true</code> config option:</p>
+
+<pre><code>var log = bunyan.createLogger({src: true, ...});
+</code></pre>
+
+<p>This adds the call source info with the 'src' field, like this:</p>
+
+<pre><code>{
+  "name": "src-example",
+  "hostname": "banana.local",
+  "pid": 123,
+  "component": "wuzzle",
+  "level": 4,
+  "msg": "This wuzzle is woosey.",
+  "time": "2012-02-06T04:19:35.605Z",
+  "src": {
+    "file": "/Users/trentm/tm/node-bunyan/examples/src.js",
+    "line": 20,
+    "func": "Wuzzle.woos"
+  },
+  "v": 0
+}
+</code></pre>
+
+<p><strong>WARNING: Determining the call source info is slow. Never use this option
+in production.</strong></p>
+
+<h1>
+<a name="levels" class="anchor" href="#levels"><span class="octicon octicon-link"></span></a>Levels</h1>
+
+<p>The log levels in bunyan are as follows. The level descriptions are best
+practice <em>opinions</em>.</p>
+
+<ul>
+<li>"fatal" (60): The service/app is going to stop or become unusable now.
+An operator should definitely look into this soon.</li>
+<li>"error" (50): Fatal for a particular request, but the service/app continues
+servicing other requests. An operator should look at this soon(ish).</li>
+<li>"warn" (40): A note on something that should probably be looked at by an
+operator eventually.</li>
+<li>"info" (30): Detail on regular operation.</li>
+<li>"debug" (20): Anything else, i.e. too verbose to be included in "info" level.</li>
+<li>"trace" (10): Logging from external libraries used by your app or <em>very</em>
+detailed application logging.</li>
+</ul><p>Suggestions: Use "debug" sparingly. Information that will be useful to debug
+errors <em>post mortem</em> should usually be included in "info" messages if it's
+generally relevant or else with the corresponding "error" event. Don't rely
+on spewing mostly irrelevant debug messages all the time and sifting through
+them when an error occurs.</p>
+
+<p>Integers are used for the actual level values (10 for "trace", ..., 60 for
+"fatal") and constants are defined for the (bunyan.TRACE ... bunyan.DEBUG).
+The lowercase level names are aliases supported in the API.</p>
+
+<p>Here is the API for changing levels in an existing logger:</p>
+
+<pre><code>log.level() -&gt; INFO   // gets current level (lowest level of all streams)
+
+log.level(INFO)       // set all streams to level INFO
+log.level("info")     // set all streams to level INFO
+
+log.levels() -&gt; [DEBUG, INFO]   // get array of levels of all streams
+log.levels(0) -&gt; DEBUG          // get level of stream at index 0
+log.levels("foo")               // get level of stream with name "foo"
+
+log.levels(0, INFO)             // set level of stream 0 to INFO
+log.levels(0, "info")           // can use "info" et al aliases
+log.levels("foo", WARN)         // set stream named "foo" to WARN
+</code></pre>
+
+<h1>
+<a name="log-record-fields" class="anchor" href="#log-record-fields"><span class="octicon octicon-link"></span></a>Log Record Fields</h1>
+
+<p>This section will describe <em>rules</em> for the Bunyan log format: field names,
+field meanings, required fields, etc. However, a Bunyan library doesn't
+strictly enforce all these rules while records are being emitted. For example,
+Bunyan will add a <code>time</code> field with the correct format to your log records,
+but you can specify your own. It is the caller's responsibility to specify
+the appropriate format.</p>
+
+<p>The reason for the above leniency is because IMO logging a message should
+never break your app. This leads to this rule of logging: <strong>a thrown
+exception from <code>log.info(...)</code> or equivalent (other than for calling with the
+incorrect signature) is always a bug in Bunyan.</strong></p>
+
+<p>A typical Bunyan log record looks like this:</p>
+
+<pre><code>{"name":"myserver","hostname":"banana.local","pid":123,"req":{"method":"GET","url":"/path?q=1#anchor","headers":{"x-hi":"Mom","connection":"close"}},"level":3,"msg":"start request","time":"2012-02-03T19:02:46.178Z","v":0}
+</code></pre>
+
+<p>Pretty-printed:</p>
+
+<pre><code>{
+  "name": "myserver",
+  "hostname": "banana.local",
+  "pid": 123,
+  "req": {
+    "method": "GET",
+    "url": "/path?q=1#anchor",
+    "headers": {
+      "x-hi": "Mom",
+      "connection": "close"
+    },
+    "remoteAddress": "120.0.0.1",
+    "remotePort": 51244
+  },
+  "level": 3,
+  "msg": "start request",
+  "time": "2012-02-03T19:02:57.534Z",
+  "v": 0
+}
+</code></pre>
+
+<p>Core fields:</p>
+
+<ul>
+<li>
+<code>v</code>: Required. Integer. Added by Bunyan. Cannot be overriden.
+This is the Bunyan log format version (<code>require('bunyan').LOG_VERSION</code>).
+The log version is a single integer. <code>0</code> is until I release a version
+"1.0.0" of node-bunyan. Thereafter, starting with <code>1</code>, this will be
+incremented if there is any backward incompatible change to the log record
+format. Details will be in "CHANGES.md" (the change log).</li>
+<li>
+<code>level</code>: Required. Integer. Added by Bunyan. Cannot be overriden.
+See the "Levels" section.</li>
+<li>
+<code>name</code>: Required. String. Provided at Logger creation.
+You must specify a name for your logger when creating it. Typically this
+is the name of the service/app using Bunyan for logging.</li>
+<li>
+<code>hostname</code>: Required. String. Provided or determined at Logger creation.
+You can specify your hostname at Logger creation or it will be retrieved
+vi <code>os.hostname()</code>.</li>
+<li>
+<code>pid</code>: Required. Integer. Filled in automatically at Logger creation.</li>
+<li>
+<code>time</code>: Required. String. Added by Bunyan. Can be overriden.
+The date and time of the event in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601
+Extended Format</a> format and in UTC,
+as from
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/toISOString"><code>Date.toISOString()</code></a>.</li>
+<li>
+<code>msg</code>: Required. String.
+Every <code>log.debug(...)</code> et al call must provide a log message.</li>
+<li>
+<code>src</code>: Optional. Object giving log call source info. This is added
+automatically by Bunyan if the "src: true" config option is given to the
+Logger. Never use in production as this is really slow.</li>
+</ul><p>Go ahead and add more fields, and nested ones are fine (and recommended) as
+well. This is why we're using JSON. Some suggestions and best practices
+follow (feedback from actual users welcome).</p>
+
+<p>Recommended/Best Practice Fields:</p>
+
+<ul>
+<li>
+<p><code>err</code>: Object. A caught JS exception. Log that thing with <code>log.info(err)</code>
+to get:</p>
+
+<pre><code>...
+"err": {
+  "message": "boom",
+  "name": "TypeError",
+  "stack": "TypeError: boom\n    at Object.&lt;anonymous&gt; ..."
+},
+"msg": "boom",
+...
+</code></pre>
+
+<p>Or use the <code>bunyan.stdSerializers.err</code> serializer in your Logger and
+do this <code>log.error({err: err}, "oops")</code>. See "examples/err.js".</p>
+</li>
+<li><p><code>req_id</code>: String. A request identifier. Including this field in all logging
+tied to handling a particular request to your server is strongly suggested.
+This allows post analysis of logs to easily collate all related logging
+for a request. This really shines when you have a SOA with multiple services
+and you carry a single request ID from the top API down through all APIs
+(as <a href="https://github.com/mcavage/node-restify">node-restify</a> facilitates
+with its 'Request-Id' header).</p></li>
+<li>
+<p><code>req</code>: An HTTP server request. Bunyan provides <code>bunyan.stdSerializers.req</code>
+to serialize a request with a suggested set of keys. Example:</p>
+
+<pre><code>  {
+    "method": "GET",
+    "url": "/path?q=1#anchor",
+    "headers": {
+      "x-hi": "Mom",
+      "connection": "close"
+    },
+    "remoteAddress": "120.0.0.1",
+    "remotePort": 51244
+  }
+</code></pre>
+</li>
+<li>
+<p><code>res</code>: An HTTP server response. Bunyan provides <code>bunyan.stdSerializers.res</code>
+to serialize a response with a suggested set of keys. Example:</p>
+
+<pre><code>  {
+    "statusCode": 200,
+    "header": "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n"
+  }
+</code></pre>
+</li>
+</ul><p>Other fields to consider:</p>
+
+<ul>
+<li>
+<code>req.username</code>: Authenticated user (or for a 401, the user attempting to
+auth).</li>
+<li>Some mechanism to calculate response latency. "restify" users will have
+a "X-Response-Time" header. A <code>latency</code> custom field would be fine.</li>
+<li>
+<code>req.body</code>: If you know that request bodies are small (common in APIs,
+for example), then logging the request body is good.</li>
+</ul><h1>
+<a name="streams" class="anchor" href="#streams"><span class="octicon octicon-link"></span></a>Streams</h1>
+
+<p>A "stream" is Bunyan's name for an output for log messages (the equivalent
+to a log4j Appender). Ultimately Bunyan uses a
+<a href="http://nodejs.org/docs/latest/api/all.html#writable_Stream">Writable Stream</a>
+interface, but there are some additional attributes used to create and
+manage the stream. A Bunyan Logger instance has one or more streams.
+In general streams are specified with the "streams" option:</p>
+
+<pre><code>var bunyan = require('bunyan');
+var log = bunyan.createLogger({
+    name: "foo",
+    streams: [
+        {
+            stream: process.stderr,
+            level: "debug"
+        },
+        ...
+    ]
+});
+</code></pre>
+
+<p>For convenience, if there is only one stream, it can specified with the
+"stream" and "level" options (internally converted to a <code>Logger.streams</code>).</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: "foo",
+    stream: process.stderr,
+    level: "debug"
+});
+</code></pre>
+
+<p>Note that "file" streams do not support this shortcut (partly for historical
+reasons and partly to not make it difficult to add a literal "path" field
+on log records).</p>
+
+<p>If neither "streams" nor "stream" are specified, the default is a stream of
+type "stream" emitting to <code>process.stdout</code> at the "info" level.</p>
+
+<h2>
+<a name="stream-errors" class="anchor" href="#stream-errors"><span class="octicon octicon-link"></span></a>stream errors</h2>
+
+<p>Bunyan re-emits error events from the created <code>WriteStream</code>. So you can
+do this:</p>
+
+<pre><code>var log = bunyan.createLogger({name: 'mylog', streams: [{path: LOG_PATH}]});
+log.on('error', function (err, stream) {
+    // Handle stream write or create error here.
+});
+</code></pre>
+
+<h2>
+<a name="stream-type-stream" class="anchor" href="#stream-type-stream"><span class="octicon octicon-link"></span></a>stream type: <code>stream</code>
+</h2>
+
+<p>A <code>type === 'stream'</code> is a plain ol' node.js <a href="http://nodejs.org/docs/latest/api/all.html#writable_Stream">Writable
+Stream</a>. A
+"stream" (the writeable stream) field is required. E.g.: <code>process.stdout</code>,
+<code>process.stderr</code>.</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: 'foo',
+    streams: [{
+        stream: process.stderr
+        // `type: 'stream'` is implied
+    }]
+});
+</code></pre>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Required?</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>stream</td>
+<td>Yes</td>
+<td>-</td>
+<td>A "Writable Stream", e.g. a std handle or an open file write stream.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>No</td>
+<td>n/a</td>
+<td>`type == 'stream'` is implied if the `stream` field is given.</td>
+</tr>
+<tr>
+<td>level</td>
+<td>No</td>
+<td>info</td>
+<td>The level at which logging to this stream is enabled. If not
+specified it defaults to "info". If specified this can be one of the
+level strings ("trace", "debug", ...) or constants (`bunyan.TRACE`,
+`bunyan.DEBUG`, ...).</td>
+</tr>
+<tr>
+<td>name</td>
+<td>No</td>
+<td>-</td>
+<td>A name for this stream. This may be useful for usage of `log.level(NAME,
+LEVEL)`. See the [Levels section](#levels) for details. A stream "name" isn't
+used for anything else.</td>
+</tr>
+</table><h2>
+<a name="stream-type-file" class="anchor" href="#stream-type-file"><span class="octicon octicon-link"></span></a>stream type: <code>file</code>
+</h2>
+
+<p>A <code>type === 'file'</code> stream requires a "path" field. Bunyan will open this
+file for appending. E.g.:</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: 'foo',
+    streams: [{
+        path: '/var/log/foo.log',
+        // `type: 'file'` is implied
+    }]
+});
+</code></pre>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Required?</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>-</td>
+<td>A file path to which to log.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>No</td>
+<td>n/a</td>
+<td>`type == 'file'` is implied if the `path` field is given.</td>
+</tr>
+<tr>
+<td>level</td>
+<td>No</td>
+<td>info</td>
+<td>The level at which logging to this stream is enabled. If not
+specified it defaults to "info". If specified this can be one of the
+level strings ("trace", "debug", ...) or constants (`bunyan.TRACE`,
+`bunyan.DEBUG`, ...).</td>
+</tr>
+<tr>
+<td>name</td>
+<td>No</td>
+<td>-</td>
+<td>A name for this stream. This may be useful for usage of `log.level(NAME,
+LEVEL)`. See the [Levels section](#levels) for details. A stream "name" isn't
+used for anything else.</td>
+</tr>
+</table><h2>
+<a name="stream-type-rotating-file" class="anchor" href="#stream-type-rotating-file"><span class="octicon octicon-link"></span></a>stream type: <code>rotating-file</code>
+</h2>
+
+<p>A <code>type === 'rotating-file'</code> is a file stream that handles file automatic
+rotation.</p>
+
+<pre><code>var log = bunyan.createLogger({
+    name: 'foo',
+    streams: [{
+        type: 'rotating-file',
+        path: '/var/log/foo.log',
+        period: '1d',   // daily rotation
+        count: 3        // keep 3 back copies
+    }]
+});
+</code></pre>
+
+<p>This will rotate '/var/log/foo.log' every day (at midnight) to:</p>
+
+<pre><code>/var/log/foo.log.0     # yesterday
+/var/log/foo.log.1     # 1 day ago
+/var/log/foo.log.2     # 2 days ago
+</code></pre>
+
+<p><em>Currently</em>, there is no support for providing a template for the rotated
+files, or for rotating when the log reaches a threshold size.</p>
+
+<table>
+<tr>
+<th>Field</th>
+<th>Required?</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>-</td>
+<td>"rotating-file"</td>
+</tr>
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>-</td>
+<td>A file path to which to log. Rotated files will be "$path.0",
+"$path.1", ...</td>
+</tr>
+<tr>
+<td>period</td>
+<td>No</td>
+<td>1d</td>
+<td>The period at which to rotate. This is a string of the format
+"$number$scope" where "$scope" is one of "h" (hours), "d" (days), "w" (weeks),
+"m" (months), "y" (years). Or one of the following names can be used
+"hourly" (means 1h), "daily" (1d), "weekly" (1w), "monthly" (1m),
+"yearly" (1y). Rotation is done at the start of the scope: top of the hour (h),
+midnight (d), start of Sunday (w), start of the 1st of the month (m),
+start of Jan 1st (y).</td>
+</tr>
+<tr>
+<td>count</td>
+<td>No</td>
+<td>10</td>
+<td>The number of rotated files to keep.</td>
+</tr>
+<tr>
+<td>level</td>
+<td>No</td>
+<td>info</td>
+<td>The level at which logging to this stream is enabled. If not
+specified it defaults to "info". If specified this can be one of the
+level strings ("trace", "debug", ...) or constants (`bunyan.TRACE`,
+`bunyan.DEBUG`, ...).</td>
+</tr>
+<tr>
+<td>name</td>
+<td>No</td>
+<td>-</td>
+<td>A name for this stream. This may be useful for usage of `log.level(NAME,
+LEVEL)`. See the [Levels section](#levels) for details. A stream "name" isn't
+used for anything else.</td>
+</tr>
+</table><p><strong>Note on log rotation</strong>: Often you may be using external log rotation utilities
+like <code>logrotate</code> on Linux or <code>logadm</code> on SmartOS/Illumos. In those cases, unless
+your are ensuring "copy and truncate" sematics (via <code>copytruncate</code> with
+logrotate or <code>-c</code> with logadm) then the fd for your 'file' stream will change.
+You can tell bunyan to reopen the file stream with code like this in your
+app:</p>
+
+<pre><code>var log = bunyan.createLogger(...);
+...
+process.on('SIGUSR2', function () {
+    log.reopenFileStreams();
+});
+</code></pre>
+
+<p>where you'd configure your log rotation to send SIGUSR2 (or some other signal)
+to your process. Any other mechanism to signal your app to run
+<code>log.reopenFileStreams()</code> would work as well.</p>
+
+<h2>
+<a name="stream-type-raw" class="anchor" href="#stream-type-raw"><span class="octicon octicon-link"></span></a>stream type: <code>raw</code>
+</h2>
+
+<ul>
+<li>
+<code>raw</code>: Similar to a "stream" writeable stream, except that the write method
+is given raw log record <em>Object</em>s instead of a JSON-stringified string.
+This can be useful for hooking on further processing to all Bunyan logging:
+pushing to an external service, a RingBuffer (see below), etc.</li>
+</ul><h2>
+<a name="raw--ringbuffer-stream" class="anchor" href="#raw--ringbuffer-stream"><span class="octicon octicon-link"></span></a><code>raw</code> + RingBuffer Stream</h2>
+
+<p>Bunyan comes with a special stream called a RingBuffer which keeps the last N
+records in memory and does <em>not</em> write the data anywhere else.  One common
+strategy is to log 'info' and higher to a normal log file but log all records
+(including 'trace') to a ringbuffer that you can access via a debugger, or your
+own HTTP interface, or a post-mortem facility like MDB or node-panic.</p>
+
+<p>To use a RingBuffer:</p>
+
+<pre><code>/* Create a ring buffer that stores the last 100 records. */
+var bunyan = require('bunyan');
+var ringbuffer = new bunyan.RingBuffer({ limit: 100 });
+var log = bunyan.createLogger({
+    name: 'foo',
+    streams: [
+        {
+            level: 'info',
+            stream: process.stdout
+        },
+        {
+            level: 'trace',
+            type: 'raw',    // use 'raw' to get raw log record objects
+            stream: ringbuffer
+        }
+    ]
+});
+
+log.info('hello world');
+console.log(ringbuffer.records);
+</code></pre>
+
+<p>This example emits:</p>
+
+<pre><code>[ { name: 'foo',
+    hostname: '912d2b29',
+    pid: 50346,
+    level: 30,
+    msg: 'hello world',
+    time: '2012-06-19T21:34:19.906Z',
+    v: 0 } ]
+</code></pre>
+
+<h2>
+<a name="third-party-streams" class="anchor" href="#third-party-streams"><span class="octicon octicon-link"></span></a>third-party streams</h2>
+
+<ul>
+<li><p>syslog:
+<a href="https://github.com/mcavage/node-bunyan-syslog">mcavage/node-bunyan-syslog</a>
+provides support for directing bunyan logging to a syslog server.</p></li>
+<li><p>TODO: eventually <a href="https://github.com/trentm/node-bunyan-winston">https://github.com/trentm/node-bunyan-winston</a></p></li>
+</ul><h1>
+<a name="runtime-log-snooping-via-dtrace" class="anchor" href="#runtime-log-snooping-via-dtrace"><span class="octicon octicon-link"></span></a>Runtime log snooping via DTrace</h1>
+
+<p>On systems that support DTrace (e.g., MacOS, FreeBSD, illumos derivatives
+like SmartOS and OmniOS), Bunyan will create a DTrace provider (<code>bunyan</code>)
+that makes available the following probes:</p>
+
+<pre><code>log-trace
+log-debug
+log-info
+log-warn
+log-error
+log-fatal
+</code></pre>
+
+<p>Each of these probes has a single argument: the string that would be
+written to the log.  Note that when a probe is enabled, it will
+fire whenever the corresponding function is called, even if the level of
+the log message is less than that of any stream.</p>
+
+<h2>
+<a name="dtrace-examples" class="anchor" href="#dtrace-examples"><span class="octicon octicon-link"></span></a>DTrace examples</h2>
+
+<p>Trace all log messages coming from any Bunyan module on the system.
+(The <code>-x strsize=4k</code> is to raise dtrace's default 256 byte buffer size
+because log messages are longer than typical dtrace probes.)</p>
+
+<pre><code>dtrace -x strsize=4k -qn 'bunyan*:::log-*{printf("%d: %s: %s", pid, probefunc, copyinstr(arg0))}'
+</code></pre>
+
+<p>Trace all log messages coming from the "wuzzle" component:</p>
+
+<pre><code>dtrace -x strsize=4k -qn 'bunyan*:::log-*/strstr(this-&gt;str = copyinstr(arg0), "\"component\":\"wuzzle\"") != NULL/{printf("%s", this-&gt;str)}'
+</code></pre>
+
+<p>Aggregate debug messages from process 1234, by message:</p>
+
+<pre><code>dtrace -x strsize=4k -n 'bunyan1234:::log-debug{@[copyinstr(arg0)] = count()}'
+</code></pre>
+
+<p>Have the bunyan CLI pretty-print the traced logs:</p>
+
+<pre><code>dtrace -x strsize=4k -qn 'bunyan1234:::log-*{printf("%s", copyinstr(arg0))}' | bunyan
+</code></pre>
+
+<p>A convenience handle has been made for this:</p>
+
+<pre><code>bunyan -p 1234
+</code></pre>
+
+<p>On systems that support the
+<a href="http://dtrace.org/blogs/dap/2012/04/25/profiling-node-js/"><code>jstack</code></a> action
+via a node.js helper, get a stack backtrace for any debug message that
+includes the string "danger!":</p>
+
+<pre><code>dtrace -x strsize=4k -qn 'log-debug/strstr(copyinstr(arg0), "danger!") != NULL/{printf("\n%s", copyinstr(arg0)); jstack()}'
+</code></pre>
+
+<p>Output of the above might be:</p>
+
+<pre><code>{"name":"foo","hostname":"763bf293-d65c-42d5-872b-4abe25d5c4c7.local","pid":12747,"level":20,"msg":"danger!","time":"2012-10-30T18:28:57.115Z","v":0}
+
+          node`0x87e2010
+          DTraceProviderBindings.node`usdt_fire_probe+0x32
+          DTraceProviderBindings.node`_ZN4node11DTraceProbe5_fireEN2v85LocalINS1_5ValueEEE+0x32d
+          DTraceProviderBindings.node`_ZN4node11DTraceProbe4FireERKN2v89ArgumentsE+0x77
+          &lt;&lt; internal code &gt;&gt;
+          (anon) as (anon) at /root/node-bunyan/lib/bunyan.js position 40484
+          &lt;&lt; adaptor &gt;&gt;
+          (anon) as doit at /root/my-prog.js position 360
+          (anon) as list.ontimeout at timers.js position 4960
+          &lt;&lt; adaptor &gt;&gt;
+          &lt;&lt; internal &gt;&gt;
+          &lt;&lt; entry &gt;&gt;
+          node`_ZN2v88internalL6InvokeEbNS0_6HandleINS0_10JSFunctionEEENS1_INS0_6ObjectEEEiPS5_Pb+0x101
+          node`_ZN2v88internal9Execution4CallENS0_6HandleINS0_6ObjectEEES4_iPS4_Pbb+0xcb
+          node`_ZN2v88Function4CallENS_6HandleINS_6ObjectEEEiPNS1_INS_5ValueEEE+0xf0
+          node`_ZN4node12MakeCallbackEN2v86HandleINS0_6ObjectEEENS1_INS0_8FunctionEEEiPNS1_INS0_5ValueEEE+0x11f
+          node`_ZN4node12MakeCallbackEN2v86HandleINS0_6ObjectEEENS1_INS0_6StringEEEiPNS1_INS0_5ValueEEE+0x66
+          node`_ZN4node9TimerWrap9OnTimeoutEP10uv_timer_si+0x63
+          node`uv__run_timers+0x66
+          node`uv__run+0x1b
+          node`uv_run+0x17
+          node`_ZN4node5StartEiPPc+0x1d0
+          node`main+0x1b
+          node`_start+0x83
+
+          node`0x87e2010
+          DTraceProviderBindings.node`usdt_fire_probe+0x32
+          DTraceProviderBindings.node`_ZN4node11DTraceProbe5_fireEN2v85LocalINS1_5ValueEEE+0x32d
+          DTraceProviderBindings.node`_ZN4node11DTraceProbe4FireERKN2v89ArgumentsE+0x77
+          &lt;&lt; internal code &gt;&gt;
+          (anon) as (anon) at /root/node-bunyan/lib/bunyan.js position 40484
+          &lt;&lt; adaptor &gt;&gt;
+          (anon) as doit at /root/my-prog.js position 360
+          (anon) as list.ontimeout at timers.js position 4960
+          &lt;&lt; adaptor &gt;&gt;
+          &lt;&lt; internal &gt;&gt;
+          &lt;&lt; entry &gt;&gt;
+          node`_ZN2v88internalL6InvokeEbNS0_6HandleINS0_10JSFunctionEEENS1_INS0_6ObjectEEEiPS5_Pb+0x101
+          node`_ZN2v88internal9Execution4CallENS0_6HandleINS0_6ObjectEEES4_iPS4_Pbb+0xcb
+          node`_ZN2v88Function4CallENS_6HandleINS_6ObjectEEEiPNS1_INS_5ValueEEE+0xf0
+          node`_ZN4node12MakeCallbackEN2v86HandleINS0_6ObjectEEENS1_INS0_8FunctionEEEiPNS1_INS0_5ValueEEE+0x11f
+          node`_ZN4node12MakeCallbackEN2v86HandleINS0_6ObjectEEENS1_INS0_6StringEEEiPNS1_INS0_5ValueEEE+0x66
+          node`_ZN4node9TimerWrap9OnTimeoutEP10uv_timer_si+0x63
+          node`uv__run_timers+0x66
+          node`uv__run+0x1b
+          node`uv_run+0x17
+          node`_ZN4node5StartEiPPc+0x1d0
+          node`main+0x1b
+          node`_start+0x83
+</code></pre>
+
+<h1>
+<a name="versioning" class="anchor" href="#versioning"><span class="octicon octicon-link"></span></a>Versioning</h1>
+
+<p>The scheme I follow is most succintly described by the bootstrap guys
+<a href="https://github.com/twitter/bootstrap#versioning">here</a>.</p>
+
+<p>tl;dr: All versions are <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code> which will be incremented for
+breaking backward compat and major reworks, new features without breaking
+change, and bug fixes, respectively.</p>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>MIT. See "LICENSE.txt".</p>
+
+<h1>
+<a name="see-also" class="anchor" href="#see-also"><span class="octicon octicon-link"></span></a>See Also</h1>
+
+<ul>
+<li>Bunyan syslog support: <a href="https://github.com/mcavage/node-bunyan-syslog">https://github.com/mcavage/node-bunyan-syslog</a>.</li>
+<li>Bunyan + Graylog2: <a href="https://github.com/mhart/gelf-stream">https://github.com/mhart/gelf-stream</a>.</li>
+<li>An example of a Bunyan shim to the Winston logging system:
+<a href="https://github.com/trentm/node-bunyan-winston">https://github.com/trentm/node-bunyan-winston</a>.</li>
+<li>
+<a href="https://github.com/trevoro/bash-bunyan">Bunyan for Bash</a>.</li>
+<li>TODO: <code>RequestCaptureStream</code> example from restify.</li>
+</ul></article>
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" autofocus>
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com">API</a></li>
+      <li><a href="http://training.github.com">Training</a></li>
+      <li><a href="http://shop.github.com">Shop</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <a href="/">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>&copy; 2014 <span title="0.10019s from github-fe121-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="/site/terms">Terms</a></li>
+        <li><a href="/site/privacy">Privacy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester"
+                 data-url="/trentm/node-bunyan/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" title="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped leftwards"
+      title="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close js-ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+  </body>
+</html>
+
