@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Nodejs boilerplate Serevr</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        #info{
+            margin-top: 25%;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+    <article id='info'>
+        <header>Loading...</header>
+        <section id='runtimeInfo'>
+    </article>
+    </script>
+<script>
+    setTimeout(function(){
+    var updateInfo = function (){$('#info').load('/info');}
+    setInterval(function(){updateInfo()},2000);
+    },1000);
+
+</script>
+
+</body>
+</html>

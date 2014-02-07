@@ -7,6 +7,9 @@ var Router = require('node-simple-router') //https://github.com/sandy98/node-sim
 var router = Router({'logging': false});
 var mkdirp = require('mkdirp');
 //###############################
+var requestsServed
+requestsServed = 0;
+
 function uptime(format)  {
   var seconds = process.uptime()
   var numyears = Math.floor(seconds / 31536000);
@@ -14,19 +17,14 @@ function uptime(format)  {
   var numhours = Math.floor(((seconds % 31536000) % 86400) / 3600);
   var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
   var numseconds = (((seconds % 31536000) % 86400) % 3600) % 60;
-  var uptime = numyears + " years " +  numdays + " days " + numhours + " hours " + numminutes + " minutes " + parseInt(numseconds) + " seconds";
-  if (format === 'plain') {
-    return uptime + "\n\n";
-  }
-  if (format === 'html') {
-    var html="<center><h1><strong>" +
-    uptime +
-    "</center></h1></strong>";
-    return html;
-  }
-  else {
-    return uptime + "\n\n"
-  }
+  var uptime = numyears + " years " +
+  numdays + " days " +
+  numhours + " hours " +
+  numminutes + " minutes " +
+  parseInt(numseconds) + " seconds";
+  ressult = "<div>"+uptime+"</div>" +
+  "<div>"+requestsServed+"</div>"
+  return uptime + "\n\n";
 }
 //###############################
 
@@ -81,9 +79,16 @@ function logRequests(server) {
   var logRequest = function (req) {
     log.info(bunyan.stdSerializers.req(req));
   }
-  server.on('request', logRequest)
+  var updateRequestCount = function(){
+    requestsServed ++;
+  } 
+  server.on('request', function(req){
+    logRequests(req)
+    updateRequestCount()
+  })
 }
-//logRequests(server);
+
+logRequests(server);
 server.on('error', function(e) {log.error(e);});
 server.listen(8080)
 //###############################
@@ -95,9 +100,9 @@ var routerConfig = function (router) {
       response.end(data.toString());
     });
   });
-  router.get('/uptime',function(req,res){
+  router.get('/info',function(req,res){
     res.writeHead(200,{'content-type':'text/html'})
-    res.end(uptime('html'));  
+    res.end(uptime());  
   })  
 }
 routerConfig(router);
